@@ -1,8 +1,5 @@
 absl-py==0.11.0
 alabaster==0.7.12
-anaconda-client==1.7.2
-anaconda-navigator==1.10.0
-anaconda-project==0.8.3
 argh==0.26.2
 argon2-cffi @ file:///C:/ci/argon2-cffi_1596828585465/work
 asn1crypto @ file:///tmp/build/80754af9/asn1crypto_1596577642040/work
@@ -97,14 +94,6 @@ Jinja2==2.11.2
 joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
 json5==0.9.5
 jsonschema @ file:///tmp/build/80754af9/jsonschema_1602607155483/work
-jupyter==1.0.0
-jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
-jupyter-console @ file:///tmp/build/80754af9/jupyter_console_1598884538475/work
-jupyter-core==4.6.3
-jupyterlab==2.2.6
-jupyterlab-git==0.23.3
-jupyterlab-pygments @ file:///tmp/build/80754af9/jupyterlab_pygments_1601490720602/work
-jupyterlab-server @ file:///tmp/build/80754af9/jupyterlab_server_1594164409481/work
 Keras==2.4.3
 Keras-Preprocessing==1.1.2
 keyring @ file:///C:/ci/keyring_1601489747083/work
@@ -270,7 +259,7 @@ xlrd==1.2.0
 XlsxWriter @ file:///tmp/build/80754af9/xlsxwriter_1602692860603/work
 xlwings==0.20.8
 xlwt==1.3.0
-xmltodict==0.12.0
+xmltodict==0.12.0s
 yapf @ file:///tmp/build/80754af9/yapf_1593528177422/work
 zict==2.0.0
 zipp @ file:///tmp/build/80754af9/zipp_1604001098328/work
