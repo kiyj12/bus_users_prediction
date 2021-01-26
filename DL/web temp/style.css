@@ -5,7 +5,6 @@ header {
     background-color:darkseagreen;
 }
 
-
 .desc {
     font-family: 'Gothic A1', sans-serif;
     margin: 50px 10px 0px;
@@ -21,18 +20,16 @@ header {
 .desc a {
     padding: 15px
 }
-  
-section {
-    height: 400vh;
-}
+
 
 /* NAVIGATION */
 nav {
     font-family: 'Gothic A1', sans-serif;
-    width: 100%;
-    margin: 0 auto;
+    width: 20%;
+    margin: 0 10px;
     background: #fff;
     padding: 10px 0;
+    display: inline-block;
 }
 
 /* By Dominik Biedebach @domobch */
@@ -40,11 +37,11 @@ nav ul {
     list-style: none;
     text-align: center; /* 전체 범위 내 박스들 가운데 정렬 */
 }
-nav ul li {
-    display: inline-block; /*텍스트 박스들로 만들기*/
+
+nav ul li { /*텍스트 박스들로 만들기*/
 }
 nav ul li a {
-    display: block; /*텍스트 자체는 블록*/
+    display: inline-block; /*텍스트 자체는 블록*/
     padding: 30px;
     text-decoration: none;
     color: #aaa;
@@ -83,4 +80,12 @@ nav.fill ul li a:after {
 }
 nav.stroke ul li a:hover:after {
     width: 100%;
+}
+
+
+.contents {
+    background-color:#aaa;
+    width: 75%;
+    height: 1000px;
+    display: inline-block;
 }
