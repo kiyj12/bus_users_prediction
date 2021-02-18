@@ -1,0 +1,216 @@
+*{margin: 0;}
+
+body {overflow-x:hidden; overflow-y:auto;}
+
+header{
+  position: fixed;
+  top:0;
+  left:0px;
+  margin: 0px;
+  height: 130px;
+  width: 100%;
+  z-index : 1;
+
+  background-color: white;
+}
+
+#home{
+  margin : 0 auto;
+  padding: 0;
+  position: relative;
+  top: 18px;
+  left: 40px;
+
+  width: 153px;
+  height: 100px; 
+
+}
+
+nav{
+  margin: 0 auto;
+
+  position: fixed;
+  top: 35px;
+  left: 340px;
+
+  width: 1060px;
+  height: 60px;
+
+
+}
+nav ul{
+  margin: 0;
+}
+nav ul li{
+  padding: 0 45px;
+
+  list-style: none;
+  float: left;
+  line-height: 60px;
+  text-align: center;
+  font-size: 21px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+nav ul li a:hover{
+  font-weight: bold;
+  color: darkblue;
+}
+
+#clock{
+  float: right;
+  position: relative;
+  top: 12px;
+  right: 30px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 15px -8px 10px rgb(210, 210, 210);
+  z-index: 1;
+
+
+  width: 180px;
+  height: 45px;
+
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align:bottom;
+
+  color: #333;
+}
+#openweathermap-widget-23{
+  float: right;
+  position: relative;
+  top: 50px;
+
+  
+  right: -150px;
+}
+
+
+.con{
+  position: relative;
+  top: 130px;
+
+  height: 300px;
+  width: 100%;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  url("https://t1.daumcdn.net/cfile/tistory/99B7424E5C19B8592F");
+  background-repeat: no-repeat;
+  background-size:cover;
+
+}
+
+
+
+.first_background{
+  position: relative;
+  top: 22px;
+  margin: auto;
+  padding: 100px 0px;
+  height: 200px;
+  width: 100%;
+
+
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 43px;  
+  word-break:break-all;
+}
+
+
+
+.section {
+    display: inline-block;
+    padding: 0 0 0 30px;
+    height: 1500px;
+}
+
+
+/* 분석과정 페이지 메뉴 부분 */
+div.stroke {
+    font-family: 'Gothic A1', sans-serif;
+    width: 200px;
+    height: 100%;
+    margin: 0;
+    background: #fff;
+    display: inline-block;
+    text-align: center;
+    position:relative;
+    float: left;
+    left: 135px;
+    top: 200px;
+}
+
+div.stroke ul {
+    list-style: none;/* 전체 범위 내 박스들 가운데 정렬 */
+}
+
+div.stroke ul li { /*텍스트 박스들로 만들기*/
+}
+div.stroke ul li a {
+    display: inline-block; /*텍스트 자체는 블록*/
+    padding: 30px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 600;
+    margin: 0px;
+}
+div.stroke ul li a,
+div.stroke ul li a:after,
+div.stroke ul li a:before {
+    transition: all .5s;
+}
+div.stroke ul li a:hover {
+    color: #555;
+}
+
+div.stroke ul li a,
+div.fill ul li a {
+    position: relative;
+}
+div.stroke ul li a:after,
+div.fill ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #333;
+    height: 1px;
+}
+div.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+/* 분석과정페이지 내용부분 */
+.contents {
+    position: absolute;
+    /* background-color:#aaa; */
+    width: 900px;
+    height: auto;
+    display: inline-block;
+    top: 520px;
+    left: 430px;
+    padding: 0 0 10px 0; 
+
+}
+
+.main_contents{
+    width: 760px;
+    margin: 0 auto;
+
+    line-height: 28px;
+}
+
+#blank{
+    height: 150px;
+}

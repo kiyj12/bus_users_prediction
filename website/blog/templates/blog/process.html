@@ -1,0 +1,104 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/process.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="contents.js"></script>
+    <title>제주도에서 버스로 퇴근하기</title>
+</head>
+
+<body>
+  <header>
+    <a href="{% url 'mainpage' %}"><img id="home" src="{% static 'image/Logo.png' %}"></a>
+    <nav>
+      <ul>
+        <li class="menu"><a href="{% url 'final' %}">분석 결과 예측</a></li>
+        <li class="menu"><a href="{% url 'fun' %}">재밌는 빅데이터</a></li>
+        <li class="menu"><a href="{% url 'process' %}">데이터 분석 과정</a></li>
+        <li class="menu"><a href="{% url 'team' %}">팀원 소개</a></li>
+      </ul>
+    </nav>
+    <div id="clock"><h1 id="clock" style="color:gray;">00:00</h1></div>
+    <div id="openweathermap-widget-23"></div>
+    <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 23,cityid: '1846266',appid: '90ab220be316569b850305d2af2e14e5',units: 'metric',containerid: 'openweathermap-widget-23',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+
+  </header>
+
+  <!-- Contents -->
+  <article class="con">
+    <!-- Background Description -->
+    <article class="first_background">
+        제주도에서 버스로 퇴근하기 팀의 데이터 분석 과정을 삺펴보세요.
+    </article>
+
+  </article>
+
+
+    <section>
+
+        <div class="stroke">
+            <ul>
+                <li><a href="{% url 'process' %}">데이터 소개</a></li>
+                <li><a href="{% url 'eda' %}">EDA</a></li>
+                <li><a href="{% url 'ml' %}">Machine Learning</a></li>
+                <li><a href="{% url 'dl' %}">Deep Learning</a></li>
+            </ul>
+        </div>
+
+        <content class="contents">
+            <div class="main_contents">
+            <h3>Main Data</h3>
+            <br><p>데이터 출처: <a href="https://dacon.io/competitions/official/229255/data/">DACON | 퇴근시간 버스승차인원 예측 경진대회</a></p>
+            <br>
+            <p><h4>1. train.csv and test.csv</h4>
+                <br>train.csv 의 경우, 2019년 9월 제주도의 각 날짜, 출근시간(6시~12시)의 버스 정류장별 승하차 인원, 퇴근시간(18시~20시)의 버스 정류장별 승차 인원이
+                기록되어 있습니다.
+                <br>test.csv의 경우, 2019년 10월의 각 날짜, 출근시간(오전 6시~12시)의 버스 정류장별 승하차 인원이 기록되어 있습니다.
+            </p>
+            <br><br>
+            <p><h4>2. bus_bts.csv</h4>
+                <br>bus_bts의 경우, 버스카드별로 승하차 정보가 기록이 되어있습니다. 해당 데이터는 탑승 시간대가오전 6시부터 12시 사이인 경우만 있습니다.
+            </p>
+            <br><br>
+            <h3>주의사항</h3>
+            <br>
+            <p><h4>- train, test , bus_bts 공통 사항</h4>
+                해당 데이터에는 버스카드를 통해 결제를 한 경우에 대한 정류소 승, 하차 데이터로 모든 승차정보의 경우는 기록이 되어있지만,
+                <br>버스에서 하차를 할 때, 버스카드를 찍지 않는 경우, 해당 기록이 비어 있는 상태이다.
+                따라서, 승차 인원수와 하차 인원수가 동일하지 않고 다소 차이가 있다.
+            </p>
+            <br>
+            <p><h4>- train, test csv 공통사항</h4>
+                해당 버스정류장에 대한 각각의 위도, 경도가 제공이 되어있는 상태로 같은 정류장 이름이지만 위도와 경도가 서로 다른 경우가 존재한다.
+                <br>해당 경우는, 같은 정류장 이름을 가지고 있는 길 건너편의 정류장에 해당된다.
+            </p>
+            <br><br>
+            <h3>Additional Data</h3>
+            <br>
+            <ul style="line-height: 35px;">
+                <li>행정법정동 중심좌표 데이터</li>
+                <li>기상자료개방포털 데이터</li>
+            </ul>
+
+            
+            </div>
+            <div id="blank"></div>
+
+        </content>
+
+    </section>
+
+    <script type="text/javascript" src="{% static 'js/clock.js' %}">
+
+    </script>
+  
+</body>
+
+
+</html>

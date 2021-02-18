@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/fun_fact.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+    </style>
+    <title>제주도에서 버스로 퇴근하기</title>
+</head>
+
+<body>
+    <header>
+      <a href="{% url 'mainpage' %}"><img id="home" src="{% static 'image/Logo.png' %}"></a>
+      <nav>
+        <ul>
+          <li class="menu"><a href="{% url 'final' %}">분석 결과 예측</a></li>
+          <li class="menu"><a href="{% url 'fun' %}">재밌는 빅데이터</a></li>
+          <li class="menu"><a href="{% url 'process' %}">데이터 분석 과정</a></li>
+          <li class="menu"><a href="{% url 'team' %}">팀원 소개</a></li>
+        </ul>
+      </nav>
+      <div id="clock"><h1 id="clock" style="color:gray;">00:00</h1></div>
+      <div id="openweathermap-widget-23"></div>
+      <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 23,cityid: '1846266',appid: '90ab220be316569b850305d2af2e14e5',units: 'metric',containerid: 'openweathermap-widget-23',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+  
+    </header>
+  
+    <!-- Contents -->
+    <article class="contents">
+      <!-- Background Description -->
+      <article class="first_background">
+        출퇴근과 등하교로 지쳤던 제주도 버스들에게는 우리가 몰랐던 재미있는 사실들이 많답니다?
+        <br>자세히 생각할 겨를은 없었지만, 늘 버스를 같이 타던 이웃들과도 연관된 흥미로운 사실들이에요!
+        <br>빅데이터 분석으로 알아본 재미있는 정보들도 한 번 보고가세요!
+    </article>
+
+    </article>
+  
+        <section>
+            <div class="fun1">
+                <div class="common">
+                    가장 많은 사람이 탔던 버스 정류장은<span class="main">&nbsp;제주대학교</span> 이다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun2">
+                <div class="common">
+                    가장 적은 사람이 탔던 정류장은<span class="main">&nbsp;틀라목</span> 이다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun3">
+                <div class="common">
+                    출근시간에 버스에 가장 짧은 시간 있었던 사람은 버스를<span class="main">&nbsp;6초</span> 동안 탔다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun4">
+                <div class="common">
+                    출근시간에 버스를 가장 여러 번 탄 사람은 버스를<span class="main">&nbsp;184번</span> 탔다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun5">
+                <div class="common">
+                    출근시간에 사람들은<span class="main">&nbsp;한라병원</span> 에서 가장 많이 승차했다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun6">
+                <div class="common">
+                    출근시간에 사람들은<span class="main">&nbsp;제주국제공항</span> 에서 가장 많이 하차했다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun7">
+                <div class="common">
+                    출근시간에 운행된 모든 버스는 총<span class="main">&nbsp;876대</span> 이다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun8">
+                <div class="common">
+                    이름에 '공항'이 들어가는 정류장은<span class="main">&nbsp;10개</span> 이다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun9">
+                <div class="common">
+                    이름에 '병원', '의원'이 들어가는 정류장은<span class="main">&nbsp;12개</span> 이다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun10">
+                <div class="common">
+                    이름에 '사무소'가 들어가는 정류장은<span class="main">&nbsp;57개</span> 이다.
+                </div>
+                <hr>
+            </div>
+            <div class="fun11">
+                <div class="common">
+                    이름에 '학교'가 들어가는 정류장은<span class="main">&nbsp;142개</span> 이다.
+                </div>
+                <hr>
+            </div>
+            <img style="width:300px; position: relative; left: -950px; top:-1525px;" src="{% static 'image/people.png' %}">
+            <img style="width:300px; position: relative; left: -1250px; top:-860px;" src="{% static 'image/hospital.png' %}">
+            <img style="width:100px; position: relative; left: -50px; top:-1100px;" src="{% static 'image/bus.png' %}">
+            <img style="width:100px; position: relative; left: -50px; top:-1100px;" src="{% static 'image/bus.png' %}">
+            
+        </section>
+
+    </article>
+
+    <script type="text/javascript" src="{% static 'js/clock.js' %}">
+
+    </script>
+</body>
+
+</html>

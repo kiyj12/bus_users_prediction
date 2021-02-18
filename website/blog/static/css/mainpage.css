@@ -1,0 +1,199 @@
+*{margin: 0;}
+
+body {overflow-x:hidden; overflow-y:auto;}
+
+header{
+  position: fixed;
+  top:0;
+  left:0px;
+  margin: 0px;
+  height: 130px;
+  width: 100%;
+  z-index : 1;
+
+  background-color: white;
+}
+
+#home{
+  margin : 0 auto;
+  padding: 0;
+  position: relative;
+  top: 18px;
+  left: 40px;
+
+  width: 153px;
+  height: 100px; 
+
+}
+
+nav{
+  margin: 0 auto;
+
+  position: fixed;
+  top: 35px;
+  left: 340px;
+
+  width: 1060px;
+  height: 60px;
+
+
+}
+nav ul{
+  margin: 0;
+}
+nav ul li{
+  padding: 0 45px;
+
+  list-style: none;
+  float: left;
+  line-height: 60px;
+  text-align: center;
+  font-size: 21px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+nav ul li a:hover{
+  font-weight: bold;
+  color: darkblue;
+}
+
+#clock{
+  float: right;
+  position: relative;
+  top: 12px;
+  right: 30px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 15px -8px 10px rgb(210, 210, 210);
+  z-index: 1;
+
+
+  width: 180px;
+  height: 45px;
+
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align:bottom;
+
+  color: #333;
+}
+#openweathermap-widget-23{
+  float: right;
+  position: relative;
+  top: 50px;
+
+  
+  right: -150px;
+}
+
+
+
+.contents{
+  position: relative;
+  top: 130px;
+
+  height: 623px;
+  width: 100%;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  url("https://www.jeju.go.kr/files/link/67e92970-f08d-4a45-a4dc-da751fd454df.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.first_background{
+  position: relative;
+  top: 4px;
+  margin: 0px;
+  padding: 30px;
+  height: 200px;
+  width: 100%;
+
+
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 43px;  
+}
+
+.con{
+  width: 400px;
+  height: 300px;
+
+  border-radius: 25px;
+
+
+  box-shadow: 0 -5px 8px #444 inset;
+  border: 1px solid #333;
+  padding: 2px 2px;
+  border-radius: 5px;
+  background:rgb(248, 248, 248);
+  min-height: 1em;  
+}
+#con1{
+  position: relative;
+  top: 25px;
+  left: -440px;
+  margin: auto;
+
+}
+#con2{
+  position: relative;
+  top: -280px;
+  margin: auto;
+}
+#con3{
+  position: relative;
+  top: -585px;
+  left: 440px;
+  margin: auto;
+}
+
+.con_title{
+  font-size: 30px;
+  font-weight: 800;
+  font-family: "Tahoma", Times, serif;
+
+
+  position: relative;
+  top: 25px;
+  left: 30px; 
+}
+.con_desc{
+  font-size: 15px;
+
+  line-height: 30px;
+
+  position: relative;
+  top: 36px;
+  left: 30px;
+
+}
+
+
+#con1_img{
+  width: 200px;
+  position: relative;
+  top: 57px;
+  left: 95px;
+ 
+}
+
+#con2_img{
+  width: 330px;
+  position: relative;
+  top: 55px;
+  left: 40px; 
+}
+
+#con3_img{
+  width: 140px;
+  position: relative;
+  top: 10px;
+  left: 103px;
+}

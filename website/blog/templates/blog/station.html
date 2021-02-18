@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/final.css' %}">
+  
+  <title>제주도에서 버스로 퇴근하기</title>
+</head>
+
+<body>
+  <header>
+    <a href="{% url 'mainpage' %}"><img id="home" src="{% static 'image/Logo.png' %}"></a>
+    <nav>
+      <ul>
+        <li class="menu"><a href="{% url 'final' %}">분석 결과 예측</a></li>
+        <li class="menu"><a href="{% url 'fun' %}">재밌는 빅데이터</a></li>
+        <li class="menu"><a href="{% url 'process' %}">데이터 분석 과정</a></li>
+        <li class="menu"><a href="{% url 'team' %}">팀원 소개</a></li>
+      </ul>
+    </nav>
+    <div id="clock"><h1 id="clock" style="color:gray;">00:00</h1></div>
+    <div id="openweathermap-widget-23"></div>
+    <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 23,cityid: '1846266',appid: '90ab220be316569b850305d2af2e14e5',units: 'metric',containerid: 'openweathermap-widget-23',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+
+  </header>
+
+  <!-- Contents -->
+  <article class="contents">
+    <!-- Background Description -->
+    <article class="first_background">
+      오늘, 아름다운 제주에서 몇시에, 어디에서 퇴근하시나요?
+      <br>퇴근시간에 버스에서 내리는 인원을 예측해 드릴게요.
+    </article>
+
+  </article>
+
+
+  <!--maincon-->
+  <article class="maincon">
+
+    <div class="pred">
+        <form action="{% url 'result' %}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+          <h3>어떤 정류장에서 내리시나요?</h3> <br>
+            <input type="hidden" name= "selectedDate" value="{{dateInfo}}" />
+            <input type="hidden" name= "selectedRoute" value="{{routeInfo}}" />
+            <select name="selectedStation" id="selectedStation" onchange=showNextButton3(this);>
+                {% for station in stationList %}
+                <option value="{{station}}" name="selectStation"> {{station}}</option>
+                {% endfor %}
+            </select><br><br>
+            <button class="slide_from_left" type = submit id="homeButton" >Next</button>
+        </form>
+    </div>
+      
+  </article>
+  
+
+  <footer>
+
+
+  </footer>
+
+  <script type="text/javascript" src="{% static 'js/clock.js' %}">
+
+  </script>
+
+    
+
+</body>
+
+</html>

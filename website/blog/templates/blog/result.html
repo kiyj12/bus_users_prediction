@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/final.css' %}">
+  
+  <title>제주도에서 버스로 퇴근하기</title>
+</head>
+
+<body>
+  <header>
+    <a href="{% url 'mainpage' %}"><img id="home" src="{% static 'image/Logo.png' %}"></a>
+    <nav>
+      <ul>
+        <li class="menu"><a href="{% url 'final' %}">분석 결과 예측</a></li>
+        <li class="menu"><a href="{% url 'fun' %}">재밌는 빅데이터</a></li>
+        <li class="menu"><a href="{% url 'process' %}">데이터 분석 과정</a></li>
+        <li class="menu"><a href="{% url 'team' %}">팀원 소개</a></li>
+      </ul>
+    </nav>
+    <div id="clock"><h1 id="clock" style="color:gray;">00:00</h1></div>
+    <div id="openweathermap-widget-23"></div>
+    <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 23,cityid: '1846266',appid: '90ab220be316569b850305d2af2e14e5',units: 'metric',containerid: 'openweathermap-widget-23',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+
+  </header>
+
+  <!-- Contents -->
+  <article class="contents">
+    <!-- Background Description -->
+    <article class="first_background">
+      오늘, 아름다운 제주에서 몇시에, 어디에서 퇴근하시나요?
+      <br>퇴근시간에 버스에서 내리는 인원을 예측해 드릴게요.
+    </article>
+
+  </article>
+
+
+  <!--maincon-->
+  <article class="maincon">
+
+    <div class="pred">
+            <a style="font-weight: 300;">저희의 데이터 분석에 따르면....<a><br><br>
+            <a style="font-size: larger; font-weight: 700;">{{dateInfo}} </a><a style="font-weight: 300;">에</a> <a style="font-size: larger; font-weight: 700;">{{routeInfo}} </a><a style="font-weight: 300;">번을 타고</a> <a style="font-size: larger; font-weight: 700;">{{stationInfo}} </a><a style="font-weight: 300;">에서 내리시면,</a><br><br>
+            <a style="font-size: larger; font-weight: 700;">{{prediction}}명 </a><a style="font-weight: 300;">이 함께 내릴 것으로 예측됩니다!</a></h2>
+    </div>
+      
+  </article>
+  
+
+  <footer>
+
+
+  </footer>
+
+  <script type="text/javascript" src="{% static 'js/clock.js' %}">
+
+  </script>
+
+    
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/process.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="contents.js"></script>
+    <title>제주도에서 버스로 퇴근하기</title>
+</head>
+
+    <body>
+      <header>
+        <a href="{% url 'mainpage' %}"><img id="home" src="{% static 'image/Logo.png' %}"></a>
+        <nav>
+          <ul>
+            <li class="menu"><a href="{% url 'final' %}">분석 결과 예측</a></li>
+            <li class="menu"><a href="{% url 'fun' %}">재밌는 빅데이터</a></li>
+            <li class="menu"><a href="{% url 'process' %}">데이터 분석 과정</a></li>
+            <li class="menu"><a href="{% url 'team' %}">팀원 소개</a></li>
+          </ul>
+        </nav>
+        <div id="clock"><h1 id="clock" style="color:gray;">00:00</h1></div>
+        <div id="openweathermap-widget-23"></div>
+        <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 23,cityid: '1846266',appid: '90ab220be316569b850305d2af2e14e5',units: 'metric',containerid: 'openweathermap-widget-23',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+    
+      </header>
+    
+      <!-- Contents -->
+      <article class="con">
+        <!-- Background Description -->
+        <article class="first_background">
+          제주도에서 버스로 퇴근하기 팀의 데이터 분석 과정을 삺펴보세요.
+        </article>
+    
+      </article>
+    
+    
+        <section>
+    
+            <div class="stroke">
+                <ul>
+                    <li><a href="{% url 'process' %}">데이터 소개</a></li>
+                    <li><a href="{% url 'eda' %}">EDA</a></li>
+                    <li><a href="{% url 'ml' %}">Machine Learning</a></li>
+                    <li><a href="{% url 'dl' %}">Deep Learning</a></li>
+                </ul>
+            </div>
+
+            <content class= "contents">
+              <div class="main_contents">
+                <h3>1. date 변수 변환</h3><br>
+                <ul>
+                  <li>date 컬럼을 판다스의 datetime 변수형으로 변환</li>
+                  <li>date 컬럼으로부터 요일을 뽑아 냄</li>
+                  <li>weekday 변수 생성 후 pandas의 get_dummies 함수를 활용하여 weekday에 대한 one hot encoding을 실행</li>
+                  <li>test 데이터에 대해서도 위와 똑같은 변환을 해 줌</li>
+                </ul>
+                <br><br>
+                <h3>2. in_out 변수 변환</h3><br>
+                <ul>
+                  <li>'시외'를 1로, '시내'를 0으로 변환</li>
+                  <li>test 데이터에 대해서도 위와 똑같은 변환을 해 줌</li>
+                </ul>
+                <br><br>
+                <h3>3. 승차, 하차 시간대 통합 작업</h3><br>
+                <ul>
+                  <li>date 컬럼을 판다스의 datetime 변수형으로 변환</li>
+                  <li>현재 data는 오전 시간대의 경우 1시간마다의 승차, 하차 인원수를 표시해주고 있지만, 
+                    예측하려고 하는 퇴근시간대의 경우 2시간에 해당되는 승차 인원을 예측하여야 함. 
+                    그렇기 때문에 오전 시간대에 승차, 하차 인원수들도 2시간 간격으로 통합해줌.</li>
+                  <li>해당 통합 작업 이후 생성된 변수와 퇴근시간대의 승차 인원의 상관관계를 확인하기 위하여 다음의 heatmap을 생성</li>
+                  <Br>
+                  <img src="{% static 'image/ML_heatmap1.png' %}">
+                  <li>변수의 개수는 줄었음에도 불구하고 값이 통합되어 전체적인 값의 크기가 증가하였기 때문에
+                     목적변수와 독립변수들 간에 동일한 혹은 더 높은 상관관계를 가지고 있음을 확인할 수 있음</li>
+                  <li>해당 2시간 간격 통합을 test data에도 실행</li>
+                </ul>
+                <br><br><br>
+                <h3>4. 좌표 데이터를 이용한 Feature Engineering</h3><br>
+                <h4>4-1. 측정소 위치 및 정류장 위치 확인</h4>
+                <br>
+                <ul>
+                  <li>제주도의 인구는 서귀포시와 제주시에 몰려 있는 경우가 많기 때문에 
+                    해당 지역 및 서쪽, 동쪽 지역의 위치를 활용하여 해당 지역과의 거리를 각각 feature로 추가</li>
+                  <li>현재 4개 측정소의 위치가 어느 쪽에 있는지 확인이 가능</li>
+                  <br><img src="{% static 'image/ML_map1.png' %}">
+                  <br><Br>
+                  <li>같은 정류장의 이름이 2개가 있는 경우, 위도 경도의 평균을 적용한 다음 시각화를 하여서 해당 정류소들의 위치를 확인한 결과는 다음과 같음</li>
+                  <br><img src="{% static 'image/ML_map2.png' %}">
+                </ul>
+                <br><br>
+                <h4>4-2. 측정소와 정류장 사이 거리 계산 적용</h4>
+                <ul>
+                  <li>각 정류장과 제주도에 존재하는 4군데의 기상 측정소와의 거리를 계산하여 t1~t4에 할당</li>
+                  <li>각 측정소와 정류소의 거리를 계산한 다음 해당 정류소에서 가장 가까운 곳에 있는 측정소를 dist_name 변수의 값으로 넣음</li>
+                  <li>test_data에도 적용</li>
+                </ul>
+                <br><br>
+                <h3>5. 외부 실제 측정 데이터 활용</h3><br>
+                <ul>
+                  <li>기상청 공공데이터에서 얻어온 실측 데이터 중 오전시간대의 실제 측정 데이터를 활용하여서 변수로 활용</li>
+                  <li>이 데이터의 사용 기간은 2019.09.01~10.16이며 해당 데이터를 불러온 뒤 06~11시에 해당되는 사항들만 편집하여서 사용</li>
+                  <li>data merge를 위하여 일시와 시간대를 분리. 
+                    <br>->해당 시간대의 평균 기온 및 강수량을 변수로 사용할 예정이기 때문에 groupby를 실행. 
+                    <br>->최종적으로 완성이 된 외부데이터와 현재 만들어진 train, test data에 각각 merge. 
+                    <br>->외부데이터와 결합 이후에 기존에 만들어 놓은 dist name 변수에 one hot encoding을 실행</li>
+                  <img src="{% static 'image/ML_table1.png' %}">
+                </ul>
+                <br><br>
+                <h3>6. randomforest를 활용한 모델링</h3><br>
+                <h4>6-1. 변수 선택 및 train data sampling</h4>
+                <ul>
+                  <li>-	sklearn 내부의 randomforest 함수를 이용해 모델링을 진행</li>
+                  <li>-	머신러닝 학습에 활용할 input 변수와 target 변수를 다음과 같이 정의 </li>
+                  <li>-	input_var : (시내 시외 여부, 위도 및 경도, 오전시간대 승하차 기록, 요일 one hot encoding, 
+                    각 측정소와 정류장 사이의 km 거리, 외부데이터 기온, 강수량, dist_name one hot encoding)</li>
+                </ul>
+                <br>
+                <h4>6-2. GridSearCV and RandomForestRegressor</h4>
+                <ul>
+                  <li>randomforest regressor의 최적의 parameter를 찾는 과정을 GridSearchCV를 활용하여 수행</li>
+                  <li>찾은 최적의 parametor를 투입하여 학습 후 예측</li>
+                </ul>
+                <br><br><br>
+                <h3>7. 특성 중요도</h3><br>
+                  <img src="{% static 'image/ML_table2.png' %}">
+                <Br><br><br><br>
+                <h3>8. Auto ML</h3><br>
+                <ul><li>여러 모델 비교하여 ‘Accuracy’가 가장 높은 ‘Ridge Classifier’ 선택</li></ul>
+                <img src="{% static 'image/ML_automl1.png' %}">
+                <img src="{% static 'image/ML_automl2.png' %}">
+                <img style="position: relative; left: -80px;" src="{% static 'image/ML_automl3.png' %}">
+
+              </div>
+              <div id="blank"></div>
+                
+            </content>
+
+        </section>
+
+        <script type="text/javascript" src="{% static 'js/clock.js' %}">
+
+        </script>
+      
+    </body>
+
+
+</html>

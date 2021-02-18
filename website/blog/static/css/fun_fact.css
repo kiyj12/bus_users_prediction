@@ -1,0 +1,325 @@
+*{margin: 0;}
+
+body {overflow-x:hidden; overflow-y:auto;}
+
+header{
+  position: fixed;
+  top:0;
+  left:0px;
+  margin: 0px;
+  height: 130px;
+  width: 100%;
+  z-index : 1;
+
+  background-color: white;
+}
+
+#home{
+  margin : 0 auto;
+  padding: 0;
+  position: relative;
+  top: 18px;
+  left: 40px;
+
+  width: 153px;
+  height: 100px; 
+
+}
+
+nav{
+  margin: 0 auto;
+
+  position: fixed;
+  top: 35px;
+  left: 340px;
+
+  width: 1060px;
+  height: 60px;
+
+
+}
+nav ul{
+  margin: 0;
+}
+nav ul li{
+  padding: 0 45px;
+
+  list-style: none;
+  float: left;
+  line-height: 60px;
+  text-align: center;
+  font-size: 21px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+nav ul li a:hover{
+  font-weight: bold;
+  color: darkblue;
+}
+
+#clock{
+  float: right;
+  position: relative;
+  top: 12px;
+  right: 30px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 15px -8px 10px rgb(210, 210, 210);
+  z-index: 1;
+
+
+  width: 180px;
+  height: 45px;
+
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align:bottom;
+
+  color: #333;
+}
+#openweathermap-widget-23{
+  float: right;
+  position: relative;
+  top: 50px;
+
+  
+  right: -150px;
+}
+
+
+.contents{
+  position: relative;
+  top: 130px;
+
+  height: 300px;
+  width: 100%;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  url("https://t1.daumcdn.net/cfile/tistory/99B7424E5C19B8592F");
+  background-repeat: no-repeat;
+  background-size:cover;
+
+}
+
+.first_background{
+  position: relative;
+  top: 35px;
+  margin: 0px;
+  padding: 50px 0px;
+  height: 200px;
+  width: 100%;
+
+
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 43px;  
+}
+
+
+
+.main{
+  font-size: 60px;
+  /* text-shadow: 0 3px rgb(80, 80, 80), 3px 0 rgb(82, 82, 82) ; */
+  font-weight: 500;
+  font-family: 'Black Han Sans', sans-serif;
+  top:100px;
+   
+}
+
+
+.common{
+  margin-bottom: 80px;
+  width: 1000px;
+  height: 70px;
+  top:100px;
+}
+hr{
+  height: 3px;
+  border: none;
+  width: 800px;
+}
+
+section div{
+  top: 200px;
+  width: 1000px ;
+}
+
+section hr{
+  padding: 0 100px ;
+}
+
+.fun1{
+  position: relative;
+  float:left;
+  text-align: right;
+}
+.fun1 .main{
+  color:red;
+}
+.fun1 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: red;
+  float:left;
+}
+
+.fun2{
+  position: relative;
+  float:right;
+  text-align: left;  
+}
+.fun2 .main{
+  color:orange;
+}
+.fun2 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: orange;
+  float:right;
+}
+.fun3{
+  position: relative;
+  float:left;
+  text-align: right;
+
+}
+.fun3 .main{
+  color:yellowgreen;
+}
+.fun3 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: yellowgreen;
+}
+
+.fun4{
+  position: relative;
+  float:right;
+}
+.fun4 .main{
+  color:gold;
+}
+.fun4 hr{
+  position: relative;
+  bottom: 68px;
+  background-color:gold;
+  float:right;
+
+}
+
+.fun5{
+  position: relative;
+  float:left;
+  margin-bottom: 20px;
+  text-align: right;
+
+}
+.fun5 .main{
+  color:rgb(188, 188, 248);
+}
+.fun5 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: rgb(188, 188, 248);
+  
+}
+
+.fun6{
+  position: relative;
+  float:right;
+}
+.fun6 .main{
+  color:dodgerblue;
+}
+.fun6 hr{
+  position: relative;
+  bottom: 68px;
+  background-color:dodgerblue;
+  float:right;
+
+}
+
+.fun7{
+  position: relative;
+  float:left;
+  text-align: right;
+
+}
+.fun7 .main{
+  color:lightseagreen;
+}
+.fun7 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: lightseagreen;
+}
+
+.fun8{
+  position: relative;
+  float:right;
+}
+.fun8 .main{
+  color:mediumaquamarine;
+}
+.fun8 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: mediumaquamarine;
+  float:right;
+
+}
+
+.fun9{
+  position: relative;
+  float:left;
+  text-align: right;
+
+}
+.fun9 .main{
+  color:deeppink;
+}
+.fun9 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: deeppink;
+}
+
+.fun10{
+  position: relative;
+  float:right;
+}
+.fun10 .main{
+  color:lightslategray;
+}
+.fun10 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: lightslategray;
+  float:right;
+
+}
+
+
+.fun11{
+  position: relative;
+  float:left;
+  text-align: right;
+
+}
+.fun11 .main{
+  color:limegreen;
+}
+.fun11 hr{
+  position: relative;
+  bottom: 68px;
+  background-color: limegreen;
+}
+
+#blank{
+  height: 20px;
+}
