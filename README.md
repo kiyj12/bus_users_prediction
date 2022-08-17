@@ -12,8 +12,8 @@
 - 인원
   - **김수빈** : Project Manager
       - `Machine Learning Part`, `git Manage Part`
-  - **기유진** : Scrum Master
-      - `Slack APP Part`, `DB Part`
+  - **기유진** : Scrum Master & Developer
+      - `Webpage Part`, `DB Part`
   - **김수빈** : Developer
       - `Document & UCC Part`, `Slack APP Part`
 
